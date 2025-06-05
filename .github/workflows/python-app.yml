@@ -24,10 +24,10 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        python -m conda install -v --no-cache-dir --upgrade pip
-        conda install -v flake8 pytest
+        python -m pip install -v --no-cache-dir --upgrade pip
+        pip install -v flake8 pytest
         # pip install -v --no-cache-dir pytest pytest-html
-        if [ -f requirements.txt ]; then conda install -v --no-cache-dir -r requirements.txt; fi
+        if [ -f requirements.txt ]; then pip install -v --no-cache-dir -r requirements.txt; fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
